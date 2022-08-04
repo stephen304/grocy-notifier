@@ -1,0 +1,14 @@
+version: '2.4'
+
+services:
+  notifier:
+    build:
+      context: .
+    image: grocy-notifier:latest
+    environment:
+      - GROCY_API_KEY=
+      - GROCY_URL=
+      - WA_GROUP_ID=
+      - CRON_CHORE_SCHEDULE=0 0 9 * * *
+    volumes:
+      - ~/volumes/grocy/notifier:/sessions
