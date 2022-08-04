@@ -5,7 +5,8 @@ import wa from '@open-wa/wa-automate';
 const GROCY_API_KEY = process.env.GROCY_API_KEY || "";
 const GROCY_URL = process.env.GROCY_URL || "";
 const WA_GROUP_ID = process.env.WA_GROUP_ID || "";
-const CRON_CHORE_SCHEDULE = process.env.CRON_CHORE_SCHEDULE || "0 0 8 * *";
+const CRON_CHORE_SCHEDULE = process.env.CRON_CHORE_SCHEDULE || "0 0 8 * * *";
+const INDOCKER = process.env.INDOCKER || false;
 
 wa.create({
   sessionId: "COVID_HELPER",
@@ -17,6 +18,7 @@ wa.create({
   hostNotificationLang: 'PT_BR',
   logConsole: false,
   popup: true,
+  inDocker: INDOCKER,
   qrTimeout: 0, //0 means it will wait forever for you to scan the qr code
 }).then(client => start(client));
 
