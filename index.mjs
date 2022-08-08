@@ -40,7 +40,7 @@ const choreNotifierScheduler = async (client) => {
 
     const dueChores = chores.filter(chore => {
       let now = new Date();
-      now.setDate(now.getDate() + 2);
+      now.setDate(now.getDate() + 1);
       return new Date(chore.next_estimated_execution_time) < now;
     });
 

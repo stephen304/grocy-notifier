@@ -6,6 +6,7 @@ services:
       context: .
     image: grocy-notifier:latest
     environment:
+      - TZ=America/New_York
       - GROCY_API_KEY=
       - GROCY_URL=
       - WA_GROUP_ID=
